@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core System Colors */
+    --color-background: #ffffff; /* white */
+    --color-foreground: #1a202c; /* gray-900 */
+    --color-border: #e2e8f0; /* gray-200 */
+    --color-input: #ffffff; /* white */
+    --color-ring: #3182ce; /* blue-600 */
+    
+    /* Card & Surface Colors */
+    --color-card: #ffffff; /* white */
+    --color-card-foreground: #1a202c; /* gray-900 */
+    --color-popover: #ffffff; /* white */
+    --color-popover-foreground: #1a202c; /* gray-900 */
+    --color-surface: #f7fafc; /* gray-50 */
+    
+    /* Muted Colors */
+    --color-muted: #f7fafc; /* gray-50 */
+    --color-muted-foreground: #718096; /* gray-500 */
+    
+    /* Brand Primary Colors */
+    --color-primary: #1a202c; /* gray-900 */
+    --color-primary-foreground: #ffffff; /* white */
+    
+    /* Brand Secondary Colors */
+    --color-secondary: #2d3748; /* gray-700 */
+    --color-secondary-foreground: #ffffff; /* white */
+    
+    /* Interactive Accent Colors */
+    --color-accent: #3182ce; /* blue-600 */
+    --color-accent-foreground: #ffffff; /* white */
+    
+    /* Status Colors */
+    --color-success: #38a169; /* green-500 */
+    --color-success-foreground: #ffffff; /* white */
+    --color-warning: #ed8936; /* orange-400 */
+    --color-warning-foreground: #ffffff; /* white */
+    --color-error: #e53e3e; /* red-500 */
+    --color-error-foreground: #ffffff; /* white */
+    --color-destructive: #e53e3e; /* red-500 */
+    --color-destructive-foreground: #ffffff; /* white */
+    
+    /* Text Hierarchy */
+    --color-text-primary: #2d3748; /* gray-700 */
+    --color-text-secondary: #718096; /* gray-500 */
+    
+    /* Interactive States */
+    --color-hover: #f7fafc; /* gray-50 */
+    --color-active: #edf2f7; /* gray-100 */
+    
+    /* Code & Technical */
+    --color-code-bg: #1a202c; /* gray-900 */
+    --color-code-text: #e2e8f0; /* gray-200 */
+    --color-code-accent: #3182ce; /* blue-600 */
+  }
+
+  .dark {
+    /* Core System Colors */
+    --color-background: #0f172a; /* slate-900 */
+    --color-foreground: #f1f5f9; /* slate-100 */
+    --color-border: #334155; /* slate-700 */
+    --color-input: #1e293b; /* slate-800 */
+    --color-ring: #60a5fa; /* blue-400 */
+    
+    /* Card & Surface Colors */
+    --color-card: #1e293b; /* slate-800 */
+    --color-card-foreground: #f1f5f9; /* slate-100 */
+    --color-popover: #1e293b; /* slate-800 */
+    --color-popover-foreground: #f1f5f9; /* slate-100 */
+    --color-surface: #1e293b; /* slate-800 */
+    
+    /* Muted Colors */
+    --color-muted: #1e293b; /* slate-800 */
+    --color-muted-foreground: #94a3b8; /* slate-400 */
+    
+    /* Brand Primary Colors */
+    --color-primary: #f1f5f9; /* slate-100 */
+    --color-primary-foreground: #0f172a; /* slate-900 */
+    
+    /* Brand Secondary Colors */
+    --color-secondary: #334155; /* slate-700 */
+    --color-secondary-foreground: #f1f5f9; /* slate-100 */
+    
+    /* Interactive Accent Colors */
+    --color-accent: #60a5fa; /* blue-400 */
+    --color-accent-foreground: #0f172a; /* slate-900 */
+    
+    /* Status Colors */
+    --color-success: #22c55e; /* green-500 */
+    --color-success-foreground: #0f172a; /* slate-900 */
+    --color-warning: #f59e0b; /* amber-500 */
+    --color-warning-foreground: #0f172a; /* slate-900 */
+    --color-error: #ef4444; /* red-500 */
+    --color-error-foreground: #f1f5f9; /* slate-100 */
+    --color-destructive: #ef4444; /* red-500 */
+    --color-destructive-foreground: #f1f5f9; /* slate-100 */
+    
+    /* Text Hierarchy */
+    --color-text-primary: #e2e8f0; /* slate-200 */
+    --color-text-secondary: #94a3b8; /* slate-400 */
+    
+    /* Interactive States */
+    --color-hover: #334155; /* slate-700 */
+    --color-active: #475569; /* slate-600 */
+    
+    /* Code & Technical */
+    --color-code-bg: #0f172a; /* slate-900 */
+    --color-code-text: #e2e8f0; /* slate-200 */
+    --color-code-accent: #60a5fa; /* blue-400 */
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-inter text-primary;
+  }
+  
+  code, pre {
+    @apply font-mono;
+  }
+}
+
+@layer components {
+  .font-inter {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+  
+  .font-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Cascadia Code', monospace;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+  
+  .shadow-brand {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .shadow-brand-lg {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  .dark .shadow-brand {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  .dark .shadow-brand-lg {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  }
+  
+  .animation-spring {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .hover-lift {
+    @apply animation-spring hover:-translate-y-0.5 hover:shadow-brand-lg;
+  }
+  
+  .code-block {
+    @apply bg-code-bg text-code-text p-4 rounded-lg font-mono text-sm overflow-x-auto;
+  }
+.interactive-card  {
+    @apply bg-card border border-border rounded-lg p-6 animation-spring hover:shadow-brand;
+  }
+  
+  .glass-effect {
+    @apply bg-white/80 backdrop-blur-sm border border-white/20;
+  }
+
+  .dark .glass-effect {
+    @apply bg-slate-900/80 backdrop-blur-sm border border-slate-700/20;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .animation-delay-100 {
+    animation-delay: 0.1s;
+  }
+  
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+  
+  .animation-delay-300 {
+    animation-delay: 0.3s;
+  }
+  
+  .animation-delay-500 {
+    animation-delay: 0.5s;
+  }
+}
