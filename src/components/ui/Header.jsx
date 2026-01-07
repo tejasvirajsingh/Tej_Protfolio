@@ -60,8 +60,8 @@ const Header = () => {
       <header 
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled 
-            ? 'bg-background/95 backdrop-blur-sm shadow-brand border-b border-border' 
-            : 'bg-transparent'
+            ? 'bg-background  shadow-brand border-b border-border' 
+            : 'bg-transparent '
         }`}
       >
         <div className="w-full px-4 sm:px-6 lg:px-8">
