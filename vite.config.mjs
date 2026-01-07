@@ -5,9 +5,8 @@ import tagger from "@dhiwise/component-tagger";
 
 export default defineConfig({
   plugins: [tsconfigPaths(), react(), tagger()],
-  base: "/", // 👈 VERY IMPORTANT
+  base: "/",               // 🔥 REQUIRED
   build: {
-    outDir: "dist", // 👈 CHANGE build → dist
-    chunkSizeWarningLimit: 2000,
+    outDir: "dist",        // 🔥 REQUIRED
   },
 });
